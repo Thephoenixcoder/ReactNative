@@ -1,6 +1,6 @@
 //import liraries
 import React, { Component } from 'react';
-import { View, Text, StyleSheet, Image } from 'react-native';
+import { View, Text, StyleSheet, Image, ImageBackground } from 'react-native';
 import AppIntroSlider from 'react-native-app-intro-slider';
 
 
@@ -10,7 +10,6 @@ const slides = [
         title: 'Donate for Homelesss People',
         text: 'Description.\nSay something cool',
         image: require('../../../assets/1.png'),
-        backgroundColor: '#229145',
         color: '#f8f8f8'
     },
     {
@@ -18,7 +17,6 @@ const slides = [
         title: 'Donate for Homelesss children',
         text: 'Description.\nSay something cool',
         image: require('../../../assets/2.png'),
-        backgroundColor: '#fff',
         color: '#000'
     },
     {
@@ -26,7 +24,6 @@ const slides = [
         title: 'Donate For Homelesss Animals',
         text: 'Description.\nSay something cool',
         image: require('../../../assets/3.png'),
-        backgroundColor: '#f9bc3f',
         color: '#fff'
     },
     {
@@ -34,7 +31,6 @@ const slides = [
         title: 'Donate For Environment',
         text: 'Description.\nSay something cool',
         image: require('../../../assets/4.png'),
-        backgroundColor: '#fff',
         color: '#000'
     },
 ];
@@ -45,13 +41,17 @@ class splashscreen extends Component {
     }
     _renderItem = (item) => {
         return (
+            <ImageBackground
+                source={require('../../../assets/background.jpg')}
+                style={styles.backgroundImage}>
+                <View style={{ flex: 1, justifyContent: "center", alignItems: 'center' }}>
+                    <Image style={styles.image} source={item.image} />
+                    <Text style={styles.title}>{item.title}</Text>
+                    <Text style={styles.text}>{item.text}</Text>
 
-            <View style={{ backgroundColor: item.backgroundColor, flex: 1, justifyContent: "center", alignItems: 'center' }}>
-                <Image style={styles.image} source={item.image} />
-                <Text style={styles.title}>{item.title}</Text>
-                <Text style={styles.text}>{item.text}</Text>
+                </View>
+            </ImageBackground>
 
-            </View>
 
         );
     }
@@ -71,21 +71,25 @@ class splashscreen extends Component {
     }
 }
 const styles = StyleSheet.create({
-
+    backgroundImage: {
+        flex: 1,
+        width: '100%'
+    },
     image: {
-        width: 400,
+        width: 230,
 
     },
     text: {
         color: '#2f3841',
         textAlign: 'center',
-        paddingHorizontal: 16,
+        paddingHorizontal: 20,
     },
     title: {
         fontSize: 22,
         backgroundColor: 'transparent',
         textAlign: 'center',
-        marginBottom: 16,
+        marginBottom: 30,
+        marginTop: 80,
         color: '#2f3841'
     }
 });

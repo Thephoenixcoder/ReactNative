@@ -1,15 +1,12 @@
 //import liraries
 import React, { Component } from 'react';
 import { View, Text, StyleSheet } from 'react-native';
-import { IntroScreen } from '../authscreen'
 
 // create a component
-const WelcomeFlow = () => {
-
+const IntroScreen = () => {
     return (
-
         <View style={styles.container}>
-            <IntroScreen />
+            <Text>IntroScreen</Text>
         </View>
     );
 };
@@ -17,10 +14,13 @@ const WelcomeFlow = () => {
 // define your styles
 const styles = StyleSheet.create({
     container: {
-        flex: 1,
-        backgroundColor: '#eee',
+
+        justifyContent: 'center',
+        alignItems: 'center',
+        backgroundColor: '#ff696b',
+        height: 250
     },
 });
 
 //make this component available to the app
-export { WelcomeFlow };
+export { IntroScreen };
