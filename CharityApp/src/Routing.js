@@ -7,7 +7,12 @@ import { WelcomeFlow, LoginFlow, CreateAccountFlow } from './components/authscre
 import { HomeScreen, ProfileScreen, FavoriteScreen, BadgesScreen, DonationsScreen } from './components/homescreen'
 // create a component
 const Authstacknavigator = createStackNavigator({
-    Welcome: WelcomeFlow,
+    Welcome: {
+        screen: WelcomeFlow,
+        navigationOptions: {
+            header: null,
+        }
+    },
     login: LoginFlow,
     signup: CreateAccountFlow
 })
