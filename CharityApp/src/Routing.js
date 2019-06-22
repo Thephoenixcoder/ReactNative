@@ -93,7 +93,7 @@ const createswitch = createSwitchNavigator({
 
 },
     {
-        initialRouteName: 'App'
+        initialRouteName: 'splashScreen'
     }
 )
 
