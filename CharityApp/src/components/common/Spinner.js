@@ -1,26 +1,24 @@
 //import liraries
 import React, { Component } from 'react';
-import { View, Text, StyleSheet } from 'react-native';
+import { View, Text, StyleSheet,ActivityIndicator } from 'react-native';
 
 // create a component
-const IntroScreen = () => {
+const Spinner = (size) => {
     return (
         <View style={styles.container}>
-            <Text>IntroScreen</Text>
-        </View>
+        <ActivityIndicator size={size || 'large'} />
+      </View>
     );
 };
 
 // define your styles
 const styles = StyleSheet.create({
     container: {
-
+        flex: 1,
         justifyContent: 'center',
-        alignItems: 'center',
-        backgroundColor: '#ff696b',
-        height: 240
+        alignItems: 'center'
     },
 });
 
 //make this component available to the app
-export { IntroScreen };
+export {Spinner};

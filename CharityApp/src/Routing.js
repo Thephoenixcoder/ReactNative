@@ -13,8 +13,12 @@ const Authstacknavigator = createStackNavigator({
             header: null,
         }
     },
-    login: LoginFlow,
-    signup: CreateAccountFlow
+    login:{
+        screen: LoginFlow
+    },
+    signup:{ 
+        screen:CreateAccountFlow
+    }
 })
 
 const AppTabNavigator = createBottomTabNavigator({
@@ -98,7 +102,7 @@ const createswitch = createSwitchNavigator({
 
 },
     {
-        initialRouteName: 'splashScreen'
+        initialRouteName: 'Auth'
     }
 )
 

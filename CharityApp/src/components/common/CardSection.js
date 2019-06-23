@@ -3,10 +3,11 @@ import React, { Component } from 'react';
 import { View, Text, StyleSheet } from 'react-native';
 
 // create a component
-const IntroScreen = () => {
+const CardSection = (props) => {
+    const {direction}=props
     return (
-        <View style={styles.container}>
-            <Text>IntroScreen</Text>
+        <View  style={[styles.container,{flexDirection:direction||'row'}]}>
+           {props.children}
         </View>
     );
 };
@@ -14,13 +15,12 @@ const IntroScreen = () => {
 // define your styles
 const styles = StyleSheet.create({
     container: {
-
-        justifyContent: 'center',
-        alignItems: 'center',
-        backgroundColor: '#ff696b',
-        height: 240
-    },
+        width:'90%',
+        alignItems:'center',
+        marginBottom:10
+      
+       },
 });
 
 //make this component available to the app
-export { IntroScreen };
+export {CardSection};

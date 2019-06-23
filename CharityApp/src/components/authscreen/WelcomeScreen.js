@@ -1,16 +1,17 @@
 //import liraries
 import React, { Component } from 'react';
-import { View, Text, StyleSheet } from 'react-native';
-import { IntroScreen } from '../authscreen'
+import { ScrollView, Text, StyleSheet } from 'react-native';
+import { IntroScreen ,LoginFlow} from '../authscreen'
 
 // create a component
 const WelcomeFlow = () => {
 
     return (
 
-        <View style={styles.container}>
+        <ScrollView style={styles.container}>
             <IntroScreen />
-        </View>
+            <LoginFlow />
+        </ScrollView>
     );
 };
 
