@@ -6,18 +6,22 @@ import SplashScreen from './components/splashscreen/splashscreen';
 import { WelcomeFlow, LoginFlow, CreateAccountFlow } from './components/authscreen';
 import { HomeScreen, ProfileScreen, FavoriteScreen, BadgesScreen, DonationsScreen } from './components/homescreen'
 // create a component
+
+
+
 const Authstacknavigator = createStackNavigator({
-    Welcome: {
-        screen: WelcomeFlow,
+
+    login: {
+        screen: LoginFlow,
         navigationOptions: {
             header: null,
         }
     },
-    login:{
-        screen: LoginFlow
-    },
-    signup:{ 
-        screen:CreateAccountFlow
+    signup: {
+        screen: CreateAccountFlow,
+        navigationOptions: {
+            header: null,
+        }
     }
 })
 

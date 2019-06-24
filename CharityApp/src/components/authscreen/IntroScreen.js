@@ -1,12 +1,18 @@
 //import liraries
 import React, { Component } from 'react';
-import { View, Text, StyleSheet } from 'react-native';
+import { View, Text, StyleSheet, ActivityIndicator } from 'react-native';
+import { Image } from 'react-native-elements';
 
 // create a component
 const IntroScreen = () => {
     return (
         <View style={styles.container}>
-            <Text>IntroScreen</Text>
+            <Image
+                source={require('../../../assets/heart.png')}
+                style={styles.Image}
+
+            />
+
         </View>
     );
 };
@@ -20,6 +26,9 @@ const styles = StyleSheet.create({
         backgroundColor: '#ff696b',
         height: 240
     },
+    Image: {
+        height: 164
+    }
 });
 
 //make this component available to the app
