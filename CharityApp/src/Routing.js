@@ -1,10 +1,12 @@
 
 import React from 'react';
-import { StyleSheet, Text, View, TouchableOpacity, Icon } from 'react-native';
+import { StyleSheet, Text, View, TouchableOpacity } from 'react-native';
+import { Icon } from 'react-native-elements'
 import { createStackNavigator, createAppContainer, createSwitchNavigator, createBottomTabNavigator, createDrawerNavigator } from 'react-navigation';
 import SplashScreen from './components/splashscreen/splashscreen';
 import { WelcomeFlow, LoginFlow, CreateAccountFlow } from './components/authscreen';
-import { HomeScreen, ProfileScreen, FavoriteScreen, BadgesScreen, DonationsScreen } from './components/homescreen'
+import { HomeScreen, ProfileScreen, FavoriteScreen, BadgesScreen, DonationsScreen, SearchBars, NotificationsScreen } from './components/homescreen'
+import { Badgeicon } from './components/common'
 // create a component
 
 
@@ -31,7 +33,12 @@ const AppTabNavigator = createBottomTabNavigator({
         navigationOptions: {
             tabBarLabel: 'HOME',
             tabBarIcon: () => (
-                <Text>hello</Text>
+                <Icon
+                    name='home'
+                    type='antdesign'
+                    color='#828996'
+                    size={25}
+                />
             )
         }
     },
@@ -40,7 +47,13 @@ const AppTabNavigator = createBottomTabNavigator({
         navigationOptions: {
             tabBarLabel: 'Profile',
             tabBarIcon: () => (
-                <Text>hello</Text>
+
+                <Icon
+                    name='user'
+                    type='antdesign'
+                    color='#828996'
+                    size={25}
+                />
             )
         }
 
@@ -49,8 +62,14 @@ const AppTabNavigator = createBottomTabNavigator({
         screen: FavoriteScreen,
         navigationOptions: {
             tabBarLabel: 'Favorite',
+
             tabBarIcon: () => (
-                <Text>hello</Text>
+                <Icon
+                    name='hearto'
+                    type='antdesign'
+                    color='#828996'
+                    size={25}
+                />
             )
         }
 
@@ -60,7 +79,13 @@ const AppTabNavigator = createBottomTabNavigator({
         navigationOptions: {
             tabBarLabel: 'Badges',
             tabBarIcon: () => (
-                <Text>hello</Text>
+                <Icon
+                    name='gift'
+                    type='antdesign'
+                    color='#828996'
+                    size={25}
+
+                />
             )
         }
 
@@ -70,7 +95,12 @@ const AppTabNavigator = createBottomTabNavigator({
         navigationOptions: {
             tabBarLabel: 'Donations',
             tabBarIcon: () => (
-                <Text>hello</Text>
+                <Icon
+                    name='linechart'
+                    type='antdesign'
+                    color='#828996'
+                    size={25}
+                />
             )
         }
 
@@ -78,35 +108,53 @@ const AppTabNavigator = createBottomTabNavigator({
 
 
 })
-
+const NotificationStacknavigator = createStackNavigator({
+    Notification: {
+        screen: NotificationsScreen,
+        navigationOptions: ({ navigation }) => ({
+            title: 'Notifications'
+        })
+    }
+});
 const AppStackNavigator = createStackNavigator({
     AppTabNavigator: {
         screen: AppTabNavigator,
         navigationOptions: ({ navigation }) => ({
-            title: 'Your App',
+            headerTitle: <SearchBars />,
             headerLeft: (
                 <TouchableOpacity onPress={() => navigation.toggleDrawer()}>
                     <View style={{ paddingHorizontal: 10 }}>
-                        <Text>hello</Text>
+                        <Icon
+                            name='bars'
+                            type='antdesign'
+                            color='#ff696a'
+                            size={25}
+                        />
                     </View>
                 </TouchableOpacity>
+            ),
+            headerRight: (
+                <Badgeicon />
             )
         })
     }
 })
 const AppDrawerNavigator = createDrawerNavigator({
-    Home: AppStackNavigator
+    Home: AppStackNavigator,
+
 })
 
 
 const createswitch = createSwitchNavigator({
     splashScreen: SplashScreen,
     Auth: Authstacknavigator,
-    App: AppDrawerNavigator
+    App: AppDrawerNavigator,
+    Notification: NotificationStacknavigator
+
 
 },
     {
-        initialRouteName: 'Auth'
+        initialRouteName: 'App'
     }
 )
 

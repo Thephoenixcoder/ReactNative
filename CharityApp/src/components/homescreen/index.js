@@ -3,5 +3,7 @@ export * from './ProfileScreen'
 export * from './FavoriteScreen'
 export * from './DonationScreen'
 export * from './BadgesScreen'
+export * from './Searchbar'
+export * from './NotificationsScreen'
 
 
