@@ -4,7 +4,7 @@ import { StyleSheet, Text, View, TouchableOpacity } from 'react-native';
 import { Icon } from 'react-native-elements'
 import { createStackNavigator, createAppContainer, createSwitchNavigator, createBottomTabNavigator, createDrawerNavigator } from 'react-navigation';
 import SplashScreen from './components/splashscreen/splashscreen';
-import { WelcomeFlow, LoginFlow, CreateAccountFlow } from './components/authscreen';
+import {  LoginFlow, CreateAccountFlow } from './components/authscreen';
 import { HomeScreen, ProfileScreen, FavoriteScreen, BadgesScreen, DonationsScreen, SearchBars, NotificationsScreen } from './components/homescreen'
 import { Badgeicon } from './components/common'
 // create a component
@@ -35,7 +35,7 @@ const AppTabNavigator = createBottomTabNavigator({
             tabBarIcon: () => (
                 <Icon
                     name='home'
-                    type='antdesign'
+                    type='MaterialIcons'
                     color='#828996'
                     size={25}
                 />
@@ -65,8 +65,8 @@ const AppTabNavigator = createBottomTabNavigator({
 
             tabBarIcon: () => (
                 <Icon
-                    name='hearto'
-                    type='antdesign'
+                    name='favorite-border'
+                    type='MaterialIcons'
                     color='#828996'
                     size={25}
                 />
@@ -80,8 +80,8 @@ const AppTabNavigator = createBottomTabNavigator({
             tabBarLabel: 'Badges',
             tabBarIcon: () => (
                 <Icon
-                    name='gift'
-                    type='antdesign'
+                    name='stars'
+                    type='MaterialIcons'
                     color='#828996'
                     size={25}
 
@@ -104,18 +104,12 @@ const AppTabNavigator = createBottomTabNavigator({
             )
         }
 
-    },
+    }
+ 
 
 
 })
-const NotificationStacknavigator = createStackNavigator({
-    Notification: {
-        screen: NotificationsScreen,
-        navigationOptions: ({ navigation }) => ({
-            title: 'Notifications'
-        })
-    }
-});
+
 const AppStackNavigator = createStackNavigator({
     AppTabNavigator: {
         screen: AppTabNavigator,
@@ -134,13 +128,23 @@ const AppStackNavigator = createStackNavigator({
                 </TouchableOpacity>
             ),
             headerRight: (
-                <Badgeicon />
+                <Badgeicon count={10} onPress={()=>navigation.navigate('Notification')}/>
             )
         })
+    },
+        Notification: {
+        screen: NotificationsScreen,
+        navigationOptions: ({ navigation }) => ({
+            title: 'Notifications'
+        })
     }
+   
 })
+
+
 const AppDrawerNavigator = createDrawerNavigator({
     Home: AppStackNavigator,
+    
 
 })
 
@@ -149,7 +153,8 @@ const createswitch = createSwitchNavigator({
     splashScreen: SplashScreen,
     Auth: Authstacknavigator,
     App: AppDrawerNavigator,
-    Notification: NotificationStacknavigator
+
+ 
 
 
 },

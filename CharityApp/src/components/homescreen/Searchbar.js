@@ -26,6 +26,7 @@ class SearchBars extends Component {
                     inputContainerStyle={styles.Inputcontainer}
                     inputStyle={styles.Input}
                     showLoading={false}
+                  
 
 
                 />
@@ -39,18 +40,18 @@ const styles = StyleSheet.create({
     container: {
 
         backgroundColor: 'transparent',
-        padding: 7,
-        flex: 1,
-        flexDirection: 'row'
-
-
-    },
+        padding:0,
+        width:'100%',
+        borderColor:'#f7f7f8'
+     },
     Inputcontainer: {
-        borderRadius: 20,
+       
         backgroundColor: '#f7f7f8',
-
-
+       
     },
+    Input:{
+        borderColor:'#f7f7f8'
+    }
 
 });
 
