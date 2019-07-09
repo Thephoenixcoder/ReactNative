@@ -59,7 +59,7 @@ class splashscreen extends Component {
     _onDone = () => {
         // User finished the introduction. Show real app through
         // navigation or simply by controlling state
-        this.props.navigation.navigate('Welcome')
+        this.props.navigation.navigate('login')
 
     }
     render() {

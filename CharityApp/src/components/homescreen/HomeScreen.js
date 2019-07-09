@@ -1,14 +1,29 @@
 //import liraries
 import React, { Component } from 'react';
-import { View, Text, StyleSheet } from 'react-native';
-
+import { View, Text, StyleSheet,ActivityIndicator } from 'react-native';
+import {TabScreen,EventCategories} from './index';
+import axios from 'axios';
 // create a component
+
 class HomeScreen extends Component {
+  
+    state={
+        events:[] 
+    }
+      
     render() {
+
         return (
-            <View style={styles.container}>
-                <Text>HomeScreen</Text>
-            </View>
+            <TabScreen>
+               
+               <EventCategories  tabLabel="Eventcat1"/>
+               <EventCategories  tabLabel="Eventcat2"/>
+               <EventCategories  tabLabel="Eventcat3"/>
+               <EventCategories  tabLabel="Eventcat4"/>
+               
+               
+             
+            </TabScreen>
         );
     }
 }
@@ -16,10 +31,8 @@ class HomeScreen extends Component {
 // define your styles
 const styles = StyleSheet.create({
     container: {
-        flex: 1,
-        justifyContent: 'center',
-        alignItems: 'center',
-        backgroundColor: '#2c3e50',
+        flex: 1
+
     },
 });
 

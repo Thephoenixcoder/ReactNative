@@ -17,9 +17,7 @@ const styles = StyleSheet.create({
     container: {
         width:'90%',
         alignItems:'center',
-        marginBottom:10
-      
-       },
+     },
 });
 
 //make this component available to the app
