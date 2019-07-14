@@ -6,10 +6,10 @@ import ProgressBar from 'react-native-progress/Bar'
 class Progressbar extends Component {
 
     render() {
-        const {color,unfilledColor}=this.props
+        const {colors,unfilledColor,widthprog}=this.props
         return (
             <View style={styles.container}>
-              <ProgressBar progress={1}  color={color||'#69d2ff'} borderColor={unfilledColor||'#fff'} borderWidth={0} borderRadius={10} />
+              <ProgressBar progress={widthprog ||0}   color={colors||'#69d2ff'} borderColor={unfilledColor||'#fff'} borderWidth={0} borderRadius={10} />
             </View>
         );
     }
@@ -18,10 +18,8 @@ class Progressbar extends Component {
 // define your styles
 const styles = StyleSheet.create({
     container: {
-        flex: 1,
-        justifyContent: 'center',
-        alignItems: 'center',
-        backgroundColor: '#2c3e50',
+        width:'100%',
+        backgroundColor: '#eee',
     },
 });
 
