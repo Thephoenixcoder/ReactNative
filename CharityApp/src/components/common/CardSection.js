@@ -4,9 +4,9 @@ import { View, Text, StyleSheet } from 'react-native';
 
 // create a component
 const CardSection = (props) => {
-    const {direction}=props
+    const {direction,widthcd}=props
     return (
-        <View  style={[styles.container,{flexDirection:direction||'row'}]}>
+        <View  style={[styles.container,{flexDirection:direction||'row'},{width:widthcd}]}>
            {props.children}
         </View>
     );
@@ -15,7 +15,7 @@ const CardSection = (props) => {
 // define your styles
 const styles = StyleSheet.create({
     container: {
-        width:'90%',
+
         alignItems:'center',
      },
 });

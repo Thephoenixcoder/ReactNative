@@ -4,11 +4,11 @@ import { View, Text, StyleSheet } from 'react-native';
 
 // create a component
 const Card = (props) => {
-    const {bgcolor,padding}=props;
+    const {bgcolor,paddingpd}=props;
     const { container} = styles
 
     return (
-        <View style={[container,{backgroundColor:bgcolor||'#fff'},{paddingpd:padding||15}]}>
+        <View style={[container,{backgroundColor:bgcolor||'#fff'},{padding:paddingpd||15}]}>
               {props.children}
         </View>
     );
@@ -22,7 +22,7 @@ const styles = StyleSheet.create({
        marginBottom:0,
        marginLeft:20,
        marginRight:20,
-     
+      
      
         
     },

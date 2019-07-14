@@ -75,7 +75,7 @@ class LoginFlow extends Component {
             <ScrollView style={styles.container}>
                 <IntroScreen />
                 <Card >
-                    <CardSection>
+                    <CardSection widthcd="90%">
 
                         <Icon
                             name='user'
@@ -98,7 +98,7 @@ class LoginFlow extends Component {
 
 
                     </CardSection>
-                    <CardSection>
+                    <CardSection  widthcd="90%">
                         <Icon
                             name='lock'
                             type='antdesign'
