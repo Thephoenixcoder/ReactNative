@@ -1,7 +1,7 @@
 //import liraries
 import React, { Component } from 'react';
 import { Text, StyleSheet, ActivityIndicator, FlatList, View, TouchableOpacity } from 'react-native';
-import { Card, CardSection, Progressbar, Title,CircleIcon } from '../common'
+import { Card, CardSection, Progressbar, Title, CircleIcon ,Avatar} from '../common'
 import { Image } from 'react-native-elements';
 
 
@@ -10,6 +10,7 @@ import { Image } from 'react-native-elements';
 // create a component
 class EventCategories extends Component {
     state = {
+    
         data: [
             {
                 ID: 1,
@@ -67,18 +68,23 @@ class EventCategories extends Component {
     _onPress = (item) => {
         console.warn('Selected Item :', item)
     }
+    donateMoney =(item)=>{
+         console.warn('donateID',item)
+    }
     render() {
         return (
 
             <FlatList style={styles.container}
 
                 data={this.state.data}
+              
 
                 renderItem={({ item }) =>
 
-                    <TouchableOpacity onPress={() => this._onPress(item)}>
 
-                        <Card paddingpd={-1}>
+
+                    <Card paddingpd={-1}>
+                        <TouchableOpacity onPress={() => this._onPress(item)}>
                             <CardSection direction="column">
                                 <View style={styles.ImageContain}>
                                     <Image
@@ -88,20 +94,26 @@ class EventCategories extends Component {
                                         resizeMode="cover"
                                     />
                                 </View>
-                                <Progressbar  colors={item.color} widthprog={item.bar} />
+
+                                <Progressbar colors={item.color} widthprog={item.bar} />
 
                             </CardSection>
-                            <CardSection paddingtext={10} direction="row" alignItem="flex-start" >
-                                <View>
-                                    <Title color={item.color} fontsizes={18} title={item.Eventname} />
-                                    <Title color="#000" fontsizes={16} title={item.Eventdetails} />
-                                </View>
-                                <View>
-                                    <CircleIcon bordercolor={item.color} />
-                                </View>
-                            </CardSection>
-                        </Card>
-                    </TouchableOpacity>
+                        </TouchableOpacity>
+                        <CardSection paddingtext={10} direction="row" alignItem="flex-start" >
+                            <View>
+                                <Title color={item.color} fontsizes={18} title={item.Eventname} />
+                                <Title color="#000" fontsizes={16} title={item.Eventdetails} />
+                            </View>
+                            <View>
+                            <TouchableOpacity onPress={() => this.donateMoney(item.ID)}>
+                              
+                                <CircleIcon bordercolors={item.color} title={item.Eventdonate} />
+                            </TouchableOpacity>
+                            </View>
+                        </CardSection>
+                      
+                    </Card>
+
                 }
 
             />

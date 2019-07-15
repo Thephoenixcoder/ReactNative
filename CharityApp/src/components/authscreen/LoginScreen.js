@@ -4,7 +4,7 @@ import { View, Text, StyleSheet, TouchableOpacity, ScrollView } from 'react-nati
 import { Card, CardSection, Spinner } from '../common'
 import { Input, Icon, Button, SocialIcon } from 'react-native-elements'
 import { IntroScreen } from '../authscreen'
-
+ 
 // create a component
 class LoginFlow extends Component {
     constructor(props) {

@@ -1,16 +1,19 @@
 //import liraries
 import React, { Component } from 'react';
-import { View, Text, StyleSheet } from 'react-native';
+import { View, Text, StyleSheet,TouchableOpacity } from 'react-native';
 
 // create a component
 const CircleIcon = (props) => {
-    const {backgroundtype,title,bordercolor,paddings}=props
+    const {backgroundtype,title,bordercolors,paddings}=props
     return (
+      
         <View style={[styles.container,{padding:paddings||8},{backgroundColor:backgroundtype||'#fff'}]}>
-            <View style={{borderColor:bordercolor}}>
-            
+            <View style={[{borderColor:bordercolors,borderWidth:2},styles.borderwrap]}>
+                <Text>Donate</Text>
+                <Text>{props.title}</Text>
             </View>
         </View>
+  
     );
 };
 
@@ -34,6 +37,13 @@ const styles = StyleSheet.create({
 
         elevation: 4,
     },
+    borderwrap:{
+        width:75,
+        height:75,
+        borderRadius: 75,
+        justifyContent: 'center',
+        alignItems: 'center',
+        }
 });
 
 //make this component available to the app
