@@ -19,7 +19,7 @@ class Progressbar extends Component {
 const styles = StyleSheet.create({
     container: {
         width:'100%',
-        backgroundColor: '#eee',
+        backgroundColor: '#f8f8f8',
     },
 });
 

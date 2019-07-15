@@ -1,7 +1,7 @@
 //import liraries
 import React, { Component } from 'react';
 import { Text, StyleSheet, ActivityIndicator, FlatList, View, TouchableOpacity } from 'react-native';
-import { Card, CardSection, Progressbar, Title, CircleIcon ,Avatar} from '../common'
+import { Card, CardSection, Progressbar, Title, CircleIcon ,Heart} from '../common'
 import { Image } from 'react-native-elements';
 
 
@@ -10,7 +10,7 @@ import { Image } from 'react-native-elements';
 // create a component
 class EventCategories extends Component {
     state = {
-    
+        flag:true,
         data: [
             {
                 ID: 1,
@@ -18,7 +18,7 @@ class EventCategories extends Component {
                 Eventpicture: 'https://i.ibb.co/L8v8YFx/17cafdac3cb3ac19edc07079037c3de3a7957f6c.jpg',
                 Eventdetails: 'This is event',
                 Eventavatars: '',
-                Eventdonate: '30$',
+                Eventdonate: '30 Egp',
                 color: '#69d2ff',
                 bar: 1
             },
@@ -28,7 +28,7 @@ class EventCategories extends Component {
                 Eventpicture: 'https://i.ibb.co/1d25pP8/136743329-15103581457011n.jpg',
                 Eventdetails: 'This is event2',
                 Eventavatars: '',
-                Eventdonate: '50$',
+                Eventdonate: '50 Egp',
                 color: '#be69ff',
                 bar: 0.4
             },
@@ -38,17 +38,17 @@ class EventCategories extends Component {
                 Eventpicture: 'https://i.ibb.co/5Mj11D8/img-5152-large.jpg',
                 Eventdetails: 'This is event2',
                 Eventavatars: '',
-                Eventdonate: '50$',
+                Eventdonate: '50 Egp',
                 color: '#ffc41f',
                 bar: 0.3
             },
             {
                 ID: 4,
-                Eventname: 'At vero eos et accusamus ',
+                Eventname: 'At vero eos et accusamus hello come',
                 Eventpicture: 'https://i.ibb.co/1d25pP8/136743329-15103581457011n.jpg',
                 Eventdetails: 'This is event2',
                 Eventavatars: '',
-                Eventdonate: '50$',
+                Eventdonate: '50 Egp',
                 color: '#ff6969',
                 bar: 0.5
             },
@@ -58,7 +58,7 @@ class EventCategories extends Component {
                 Eventpicture: 'https://i.ibb.co/L8v8YFx/17cafdac3cb3ac19edc07079037c3de3a7957f6c.jpg',
                 Eventdetails: 'This is event2',
                 Eventavatars: '',
-                Eventdonate: '50$',
+                Eventdonate: '50 Egp',
                 color: '#30d700',
                 bar: 0.9
             }
@@ -70,6 +70,9 @@ class EventCategories extends Component {
     }
     donateMoney =(item)=>{
          console.warn('donateID',item)
+    }
+    _onPressLike= (item)=>{
+        console.warn('itemid' + item)
     }
     render() {
         return (
@@ -84,8 +87,12 @@ class EventCategories extends Component {
 
 
                     <Card paddingpd={-1}>
-                        <TouchableOpacity onPress={() => this._onPress(item)}>
-                            <CardSection direction="column">
+                         
+                         <Heart onTouch={()=>this._onPressLike(item.ID)}/>
+                        
+                        <TouchableOpacity onPress={()=>this._onPress(item)}>
+                            <CardSection direction="column" style={{position:'relative'}}>
+                               
                                 <View style={styles.ImageContain}>
                                     <Image
                                         source={{ uri: item.Eventpicture }}
@@ -100,11 +107,11 @@ class EventCategories extends Component {
                             </CardSection>
                         </TouchableOpacity>
                         <CardSection paddingtext={10} direction="row" alignItem="flex-start" >
-                            <View>
+                            <View style={{width:'75%'}}>
                                 <Title color={item.color} fontsizes={18} title={item.Eventname} />
                                 <Title color="#000" fontsizes={16} title={item.Eventdetails} />
                             </View>
-                            <View>
+                            <View style={{width:'25%'}}>
                             <TouchableOpacity onPress={() => this.donateMoney(item.ID)}>
                               
                                 <CircleIcon bordercolors={item.color} title={item.Eventdonate} />

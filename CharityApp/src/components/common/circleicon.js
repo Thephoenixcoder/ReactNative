@@ -7,9 +7,9 @@ const CircleIcon = (props) => {
     const {backgroundtype,title,bordercolors,paddings}=props
     return (
       
-        <View style={[styles.container,{padding:paddings||8},{backgroundColor:backgroundtype||'#fff'}]}>
+        <View  style={[styles.container,{padding:paddings||8},{backgroundColor:backgroundtype||'#fff'}]}>
             <View style={[{borderColor:bordercolors,borderWidth:2},styles.borderwrap]}>
-                <Text>Donate</Text>
+                <Text style={{fontSize:10}}>Donate</Text>
                 <Text>{props.title}</Text>
             </View>
         </View>
@@ -20,13 +20,13 @@ const CircleIcon = (props) => {
 // define your styles
 const styles = StyleSheet.create({
     container: {
-        flex: 1,
+       
         justifyContent: 'center',
         alignItems: 'center',
        
-        width: 80,
-        height: 80,
-        borderRadius: 80,
+        width: 70,
+        height: 70,
+        borderRadius: 70,
         shadowColor: "#000",
         shadowOffset: {
             width: 0,
@@ -35,7 +35,7 @@ const styles = StyleSheet.create({
         shadowOpacity: 0.25,
         shadowRadius: 3.84,
 
-        elevation: 4,
+        elevation: 3,
     },
     borderwrap:{
         width:75,
