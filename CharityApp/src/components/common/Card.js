@@ -4,29 +4,17 @@ import { View, Text, StyleSheet } from 'react-native';
 
 // create a component
 const Card = (props) => {
-    const {bgcolor,paddingpd}=props;
-    const { container} = styles
+    const {bgcolor,paddingpd,margtop,margleft,margright,brdradius,flexdir,heit}=props;
+    
 
     return (
-        <View style={[container,{backgroundColor:bgcolor||'#fff'},{padding:paddingpd||15}]}>
+        <View style={[{backgroundColor:bgcolor||'#fff'},{padding:paddingpd||15},{height:heit},{marginTop:margtop||15},{marginLeft:margleft||20},{marginRight:margright||20},{borderRadius:brdradius||10},{flexDirection:flexdir||'column'}]}>
               {props.children}
         </View>
     );
 };
 
-// define your styles
-const styles = StyleSheet.create({
-    container: {
-       borderRadius:10,
-       marginTop:25,
-       marginBottom:0,
-       marginLeft:20,
-       marginRight:20,
-      
-     
-        
-    },
-});
+
 
 //make this component available to the app
 export {Card};

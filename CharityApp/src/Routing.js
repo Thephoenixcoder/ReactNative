@@ -4,10 +4,10 @@ import { StyleSheet, Text, View, TouchableOpacity } from 'react-native';
 import { Icon } from 'react-native-elements'
 import { createStackNavigator, createAppContainer, createSwitchNavigator, createBottomTabNavigator, createDrawerNavigator } from 'react-navigation';
 import SplashScreen from './components/splashscreen/splashscreen';
-import {  LoginFlow, CreateAccountFlow } from './components/authscreen';
-import { HomeScreen, ProfileScreen, FavoriteScreen, BadgesScreen, DonationsScreen, SearchBars, NotificationsScreen ,EventCategories} from './components/homescreen'
+import { LoginFlow, CreateAccountFlow } from './components/authscreen';
+import { HomeScreen, ProfileScreen, FavoriteScreen, BadgesScreen, DonationsScreen, SearchBars, NotificationsScreen, EventCategories } from './components/homescreen'
 import { Badgeicon } from './components/common'
-import {EventScreen} from './components/Eventdetails'
+import { EventScreen, DonatedetailsScreen } from './components/Eventdetails'
 // create a component
 
 
@@ -106,7 +106,7 @@ const AppTabNavigator = createBottomTabNavigator({
         }
 
     }
- 
+
 
 
 })
@@ -129,28 +129,43 @@ const AppStackNavigator = createStackNavigator({
                 </TouchableOpacity>
             ),
             headerRight: (
-                <Badgeicon count={10} onPress={()=>navigation.navigate('Notification')}/>
+                <Badgeicon count={10} onPress={() => navigation.navigate('Notification')} />
             )
         })
     },
-        Notification: {
+    Notification: {
         screen: NotificationsScreen,
         navigationOptions: ({ navigation }) => ({
             title: 'Notifications'
         })
     },
-    EventDetails:{
-        screen:EventScreen,
-       
-      
+    EventDetails: {
+        screen: EventScreen,
+        navigationOptions: {
+            headerTitleStyle: {
+                color: '#ff7272'
+            },
+            headerTintColor: '#ff7272',
+            
+        }
+    },
+    DonateDetails: {
+        screen: DonatedetailsScreen,
+        navigationOptions: ({ navigation }) => ({
+            title: 'Donate',
+            headerTitleStyle: {
+                color: '#ff7272'
+            },
+            headerTintColor: '#ff7272',
+        })
     }
-   
+
 })
 
 
 const AppDrawerNavigator = createDrawerNavigator({
     Home: AppStackNavigator,
-    
+
 
 })
 
@@ -160,7 +175,7 @@ const createswitch = createSwitchNavigator({
     Auth: Authstacknavigator,
     App: AppDrawerNavigator,
 
- 
+
 
 
 },

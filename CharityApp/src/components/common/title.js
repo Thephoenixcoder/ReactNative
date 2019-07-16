@@ -4,10 +4,10 @@ import { View, Text, StyleSheet } from 'react-native';
 
 // create a component
 const Title = (props) => {
-    const {fontsizes,color,position,title,align}=props
+    const {fontsizes,color,position,title,align,wdth}=props
     return (
         <View style={styles.container}>
-            <Text style={{fontSize:fontsizes,color:color,flexDirection:position,textAlign:align}}>{props.title}</Text>
+            <Text style={{fontSize:fontsizes,color:color,width:wdth,flexDirection:position,textAlign:align}}>{props.title}</Text>
         </View>
     );
 };

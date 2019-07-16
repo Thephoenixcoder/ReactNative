@@ -4,7 +4,7 @@ import { Text, StyleSheet, ActivityIndicator, FlatList, View, TouchableOpacity }
 import { Card, CardSection, Progressbar, Title, CircleIcon ,Heart} from '../common'
 import { Image } from 'react-native-elements';
 import { withNavigation } from 'react-navigation';
-
+import {SearchBars} from '../homescreen'
 
 
 // create a component
@@ -21,7 +21,9 @@ class EventCategories extends Component {
                 Eventavatars: '',
                 Eventdonate: '30 Egp',
                 color: '#69d2ff',
-                bar: 1
+                bar: 1,
+                from:'November 5 2019',
+                to:'december 5 2019'
             },
             {
                 ID: 2,
@@ -31,7 +33,9 @@ class EventCategories extends Component {
                 Eventavatars: '',
                 Eventdonate: '50 Egp',
                 color: '#be69ff',
-                bar: 0.4
+                bar: 0.4,
+                from:'November 5 2019',
+                to:'december 5 2019'
             },
             {
                 ID: 3,
@@ -41,7 +45,9 @@ class EventCategories extends Component {
                 Eventavatars: '',
                 Eventdonate: '50 Egp',
                 color: '#ffc41f',
-                bar: 0.3
+                bar: 0.3,
+                from:'November 5 2019',
+                to:'december 5 2019'
             },
             {
                 ID: 4,
@@ -51,7 +57,9 @@ class EventCategories extends Component {
                 Eventavatars: '',
                 Eventdonate: '50 Egp',
                 color: '#ff6969',
-                bar: 0.5
+                bar: 0.5,
+                from:'November 5 2019',
+                to:'december 5 2019'
             },
             {
                 ID: 5,
@@ -61,7 +69,9 @@ class EventCategories extends Component {
                 Eventavatars: '',
                 Eventdonate: '50 Egp',
                 color: '#30d700',
-                bar: 0.9
+                bar: 0.9,
+                from:'November 5 2019',
+                to:'december 5 2019'
             }
 
         ]
@@ -75,11 +85,15 @@ class EventCategories extends Component {
         // console.warn('Selected Item :', item)
     }
     donateMoney =(item)=>{
-         console.warn('donateID',item)
+        this.props.navigation.navigate('DonateDetails', {
+            itemdetails:item,
+            
+          });
     }
     _onPressLike= (item)=>{
         console.warn('itemid' + item)
     }
+
     render() {
       
         return (
@@ -116,10 +130,10 @@ class EventCategories extends Component {
                         <CardSection paddingtext={10} direction="row" alignItem="flex-start" >
                             <View style={{width:'75%'}}>
                                 <Title color={item.color} fontsizes={18} title={item.Eventname} />
-                                <Title color="#000" fontsizes={16} title={item.Eventdetails} />
+                                <Title color="#737c8b" fontsizes={16} title={item.Eventdetails} />
                             </View>
                             <View style={{width:'25%'}}>
-                            <TouchableOpacity onPress={() => this.donateMoney(item.ID)}>
+                            <TouchableOpacity activeOpacity={0.9} onPress={() => this.donateMoney(item)}>
                               
                                 <CircleIcon bordercolors={item.color} title={item.Eventdonate} />
                             </TouchableOpacity>
@@ -140,7 +154,7 @@ class EventCategories extends Component {
 const styles = StyleSheet.create({
     container: {
         flex: 1,
-        backgroundColor: '#eee',
+        backgroundColor: '#f9f9f9',
 
     },
     ImageContain: {
