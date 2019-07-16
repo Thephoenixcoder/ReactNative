@@ -34,7 +34,9 @@ class EventScreen extends Component {
                             <Title  wdth={'100%'} color="#737c8b" fontsizes={14} title={item.from}  align={'center'}/>
                                
                             </CardSection>
-                            <CardSection direction="column" widthcd={'30%'}/>
+                            <CardSection direction="column" widthcd={'30%'}>
+                                <CircleIcon bordercolors={item.color} url={item.badge}/>
+                            </CardSection>
                         
                             <CardSection direction="column"  widthcd={'35%'}  align="left"  >
                             <Text style={{fontWeight:'bold',width:'100%',textAlign:'center'}}>To</Text>

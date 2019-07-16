@@ -1,7 +1,7 @@
 //import liraries
 import React, { Component } from 'react';
 import { Text, StyleSheet, ActivityIndicator, FlatList, View, TouchableOpacity } from 'react-native';
-import { Card, CardSection, Progressbar, Title, CircleIcon ,Heart} from '../common'
+import { Card, CardSection, Progressbar, Title, Circletext ,Heart} from '../common'
 import { Image } from 'react-native-elements';
 import { withNavigation } from 'react-navigation';
 import {SearchBars} from '../homescreen'
@@ -23,7 +23,8 @@ class EventCategories extends Component {
                 color: '#69d2ff',
                 bar: 1,
                 from:'November 5 2019',
-                to:'december 5 2019'
+                to:'december 5 2019',
+                
             },
             {
                 ID: 2,
@@ -135,7 +136,7 @@ class EventCategories extends Component {
                             <View style={{width:'25%'}}>
                             <TouchableOpacity activeOpacity={0.9} onPress={() => this.donateMoney(item)}>
                               
-                                <CircleIcon bordercolors={item.color} title={item.Eventdonate} />
+                                <Circletext bordercolors={item.color} title={item.Eventdonate} />
                             </TouchableOpacity>
                             </View>
                         </CardSection>

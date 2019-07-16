@@ -1,19 +1,16 @@
 //import liraries
 import React, { Component } from 'react';
 import { View, Text, StyleSheet,TouchableOpacity } from 'react-native';
-import { Image } from 'react-native-elements';
+
 // create a component
-const CircleIcon = (props) => {
-    const {backgroundtype,title,bordercolors,paddings,url}=props
+const Circletext = (props) => {
+    const {backgroundtype,title,bordercolors,paddings}=props
     return (
       
-        <View  style={[styles.container,{padding:paddings||5},{backgroundColor:backgroundtype||'#fff'}]}>
+        <View  style={[styles.container,{padding:paddings||8},{backgroundColor:backgroundtype||'#fff'}]}>
             <View style={[{borderColor:bordercolors,borderWidth:2},styles.borderwrap]}>
-            <Image
-                source={url}
-                style={styles.Image}
-
-            />
+                <Text style={{fontSize:10}}>Donate</Text>
+                <Text>{props.title}</Text>
             </View>
         </View>
   
@@ -23,15 +20,13 @@ const CircleIcon = (props) => {
 // define your styles
 const styles = StyleSheet.create({
     container: {
-        position:'relative',
+       
         justifyContent: 'center',
         alignItems: 'center',
-        position:'absolute',
-            top:'-60%',
-            
-        width: 100,
-        height: 100,
-        borderRadius: 100,
+       
+        width: 70,
+        height: 70,
+        borderRadius: 70,
         shadowColor: "#000",
         shadowOffset: {
             width: 0,
@@ -43,17 +38,13 @@ const styles = StyleSheet.create({
         elevation: 5,
     },
     borderwrap:{
-        width:95,
-        height:95,
-        borderRadius: 95,
+        width:75,
+        height:75,
+        borderRadius: 75,
         justifyContent: 'center',
         alignItems: 'center',
-        },
-        Image:{
-            width:40,
-            height:40
         }
 });
 
 //make this component available to the app
-export { CircleIcon };
+export { Circletext };
