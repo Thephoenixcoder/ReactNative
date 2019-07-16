@@ -5,8 +5,9 @@ import { Icon } from 'react-native-elements'
 import { createStackNavigator, createAppContainer, createSwitchNavigator, createBottomTabNavigator, createDrawerNavigator } from 'react-navigation';
 import SplashScreen from './components/splashscreen/splashscreen';
 import {  LoginFlow, CreateAccountFlow } from './components/authscreen';
-import { HomeScreen, ProfileScreen, FavoriteScreen, BadgesScreen, DonationsScreen, SearchBars, NotificationsScreen } from './components/homescreen'
+import { HomeScreen, ProfileScreen, FavoriteScreen, BadgesScreen, DonationsScreen, SearchBars, NotificationsScreen ,EventCategories} from './components/homescreen'
 import { Badgeicon } from './components/common'
+import {EventScreen} from './components/Eventdetails'
 // create a component
 
 
@@ -137,6 +138,11 @@ const AppStackNavigator = createStackNavigator({
         navigationOptions: ({ navigation }) => ({
             title: 'Notifications'
         })
+    },
+    EventDetails:{
+        screen:EventScreen,
+       
+      
     }
    
 })

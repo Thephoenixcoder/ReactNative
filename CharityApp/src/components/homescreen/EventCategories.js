@@ -3,12 +3,13 @@ import React, { Component } from 'react';
 import { Text, StyleSheet, ActivityIndicator, FlatList, View, TouchableOpacity } from 'react-native';
 import { Card, CardSection, Progressbar, Title, CircleIcon ,Heart} from '../common'
 import { Image } from 'react-native-elements';
-
+import { withNavigation } from 'react-navigation';
 
 
 
 // create a component
 class EventCategories extends Component {
+    
     state = {
         flag:true,
         data: [
@@ -16,7 +17,7 @@ class EventCategories extends Component {
                 ID: 1,
                 Eventname: 'At vero eos et accusamus ',
                 Eventpicture: 'https://i.ibb.co/L8v8YFx/17cafdac3cb3ac19edc07079037c3de3a7957f6c.jpg',
-                Eventdetails: 'This is event',
+                Eventdetails: 'This is event This is event2 This is event2',
                 Eventavatars: '',
                 Eventdonate: '30 Egp',
                 color: '#69d2ff',
@@ -26,7 +27,7 @@ class EventCategories extends Component {
                 ID: 2,
                 Eventname: 'At vero eos et accusamus ',
                 Eventpicture: 'https://i.ibb.co/1d25pP8/136743329-15103581457011n.jpg',
-                Eventdetails: 'This is event2',
+                Eventdetails: 'This is event2 This is event2 This is event2',
                 Eventavatars: '',
                 Eventdonate: '50 Egp',
                 color: '#be69ff',
@@ -36,7 +37,7 @@ class EventCategories extends Component {
                 ID: 3,
                 Eventname: 'At vero eos et accusamus ',
                 Eventpicture: 'https://i.ibb.co/5Mj11D8/img-5152-large.jpg',
-                Eventdetails: 'This is event2',
+                Eventdetails: 'This is event2 This is event2 This is event2 ..',
                 Eventavatars: '',
                 Eventdonate: '50 Egp',
                 color: '#ffc41f',
@@ -46,7 +47,7 @@ class EventCategories extends Component {
                 ID: 4,
                 Eventname: 'At vero eos et accusamus hello come',
                 Eventpicture: 'https://i.ibb.co/1d25pP8/136743329-15103581457011n.jpg',
-                Eventdetails: 'This is event2',
+                Eventdetails: 'This is event2 This is event2 This is event2 ..',
                 Eventavatars: '',
                 Eventdonate: '50 Egp',
                 color: '#ff6969',
@@ -56,7 +57,7 @@ class EventCategories extends Component {
                 ID: 5,
                 Eventname: 'At vero eos et accusamus ',
                 Eventpicture: 'https://i.ibb.co/L8v8YFx/17cafdac3cb3ac19edc07079037c3de3a7957f6c.jpg',
-                Eventdetails: 'This is event2',
+                Eventdetails: 'This is event2 This is event2',
                 Eventavatars: '',
                 Eventdonate: '50 Egp',
                 color: '#30d700',
@@ -66,7 +67,12 @@ class EventCategories extends Component {
         ]
     }
     _onPress = (item) => {
-        console.warn('Selected Item :', item)
+       this.props.navigation.navigate('EventDetails', {
+            itemdetails:item,
+            itemName:item.Eventname
+            
+          });
+        // console.warn('Selected Item :', item)
     }
     donateMoney =(item)=>{
          console.warn('donateID',item)
@@ -75,6 +81,7 @@ class EventCategories extends Component {
         console.warn('itemid' + item)
     }
     render() {
+      
         return (
 
             <FlatList style={styles.container}
@@ -158,4 +165,5 @@ const styles = StyleSheet.create({
 });
 
 //make this component available to the app
-export { EventCategories };
+const NavigationConnected = withNavigation( EventCategories );
+export { NavigationConnected as EventCategories };
