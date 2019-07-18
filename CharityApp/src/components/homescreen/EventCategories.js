@@ -4,7 +4,7 @@ import { Text, StyleSheet, ActivityIndicator, FlatList, View, TouchableOpacity }
 import { Card, CardSection, Progressbar, Title, Circletext ,Heart} from '../common'
 import { Image } from 'react-native-elements';
 import { withNavigation } from 'react-navigation';
-import {SearchBars} from '../homescreen'
+
 
 
 // create a component
@@ -24,6 +24,7 @@ class EventCategories extends Component {
                 bar: 1,
                 from:'November 5 2019',
                 to:'december 5 2019',
+                Badge:require('https://i.ibb.co/vQDZbJ0/donation.png')
                 
             },
             {
@@ -36,7 +37,8 @@ class EventCategories extends Component {
                 color: '#be69ff',
                 bar: 0.4,
                 from:'November 5 2019',
-                to:'december 5 2019'
+                to:'december 5 2019',
+                Badge:require('https://i.ibb.co/vQDZbJ0/donation.png')
             },
             {
                 ID: 3,
@@ -48,7 +50,9 @@ class EventCategories extends Component {
                 color: '#ffc41f',
                 bar: 0.3,
                 from:'November 5 2019',
-                to:'december 5 2019'
+                to:'december 5 2019',
+                Badge:require('https://i.ibb.co/vQDZbJ0/donation.png')
+
             },
             {
                 ID: 4,
@@ -60,7 +64,8 @@ class EventCategories extends Component {
                 color: '#ff6969',
                 bar: 0.5,
                 from:'November 5 2019',
-                to:'december 5 2019'
+                to:'december 5 2019',
+                Badge:require('https://i.ibb.co/vQDZbJ0/donation.png')
             },
             {
                 ID: 5,
@@ -72,7 +77,8 @@ class EventCategories extends Component {
                 color: '#30d700',
                 bar: 0.9,
                 from:'November 5 2019',
-                to:'december 5 2019'
+                to:'december 5 2019',
+                Badge:require('https://i.ibb.co/vQDZbJ0/donation.png')
             }
 
         ]

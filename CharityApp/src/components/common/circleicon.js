@@ -10,7 +10,7 @@ const CircleIcon = (props) => {
         <View  style={[styles.container,{padding:paddings||5},{backgroundColor:backgroundtype||'#fff'}]}>
             <View style={[{borderColor:bordercolors,borderWidth:2},styles.borderwrap]}>
             <Image
-                source={url}
+                source={url} 
                 style={styles.Image}
 
             />

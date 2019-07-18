@@ -35,7 +35,7 @@ class EventScreen extends Component {
                                
                             </CardSection>
                             <CardSection direction="column" widthcd={'30%'}>
-                                <CircleIcon bordercolors={item.color} url={item.badge}/>
+                                <CircleIcon bordercolors={item.color} url={item.Badge}/>
                             </CardSection>
                         
                             <CardSection direction="column"  widthcd={'35%'}  align="left"  >

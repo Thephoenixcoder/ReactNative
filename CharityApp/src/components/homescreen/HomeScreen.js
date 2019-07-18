@@ -2,7 +2,7 @@
 import React, { Component } from 'react';
 import { View, Text, StyleSheet,ActivityIndicator } from 'react-native';
 import {TabScreen,EventCategories} from './index';
-import axios from 'axios';
+
 // create a component
 
 class HomeScreen extends Component {
