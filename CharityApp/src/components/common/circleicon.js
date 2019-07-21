@@ -4,14 +4,14 @@ import { View, Text, StyleSheet,TouchableOpacity } from 'react-native';
 import { Image } from 'react-native-elements';
 // create a component
 const CircleIcon = (props) => {
-    const {backgroundtype,title,bordercolors,paddings,url}=props
+    const {backgroundtype,title,bordercolors,paddings,url,wdth,heit,wdth2,heit2,widthimg,heightimg}=props
     return (
       
-        <View  style={[styles.container,{padding:paddings||5},{backgroundColor:backgroundtype||'#fff'}]}>
-            <View style={[{borderColor:bordercolors,borderWidth:2},styles.borderwrap]}>
+        <View  style={[styles.container,{padding:paddings||5},{backgroundColor:backgroundtype||'#fff'},{width:wdth||100},{height:heit||100}]}>
+            <View style={[{borderColor:bordercolors,borderWidth:2},styles.borderwrap,{width:wdth2||95},{height:heit2||95}]}>
             <Image
-                source={url} 
-                style={styles.Image}
+                  source={{ uri: url }}
+                style={[styles.Image,{width:widthimg||60},{height:heightimg||60}]}
 
             />
             </View>
@@ -29,8 +29,7 @@ const styles = StyleSheet.create({
         position:'absolute',
             top:'-60%',
             
-        width: 100,
-        height: 100,
+      
         borderRadius: 100,
         shadowColor: "#000",
         shadowOffset: {
@@ -43,15 +42,14 @@ const styles = StyleSheet.create({
         elevation: 5,
     },
     borderwrap:{
-        width:95,
-        height:95,
+      
         borderRadius: 95,
         justifyContent: 'center',
         alignItems: 'center',
         },
         Image:{
-            width:40,
-            height:40
+            width:60,
+            height:60
         }
 });
 

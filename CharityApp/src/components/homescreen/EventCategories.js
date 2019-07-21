@@ -24,7 +24,7 @@ class EventCategories extends Component {
                 bar: 1,
                 from:'November 5 2019',
                 to:'december 5 2019',
-                Badge:require('https://i.ibb.co/vQDZbJ0/donation.png')
+                Badge:'https://i.ibb.co/BCHtnsn/donate1.png'
                 
             },
             {
@@ -32,13 +32,13 @@ class EventCategories extends Component {
                 Eventname: 'At vero eos et accusamus ',
                 Eventpicture: 'https://i.ibb.co/1d25pP8/136743329-15103581457011n.jpg',
                 Eventdetails: 'This is event2 This is event2 This is event2',
-                Eventavatars: '',
+                Eventavatars: 'https://i.ibb.co/BCHtnsn/donate1.png',
                 Eventdonate: '50 Egp',
                 color: '#be69ff',
                 bar: 0.4,
                 from:'November 5 2019',
                 to:'december 5 2019',
-                Badge:require('https://i.ibb.co/vQDZbJ0/donation.png')
+                Badge:'https://i.ibb.co/9rsBMWN/donate2.png'
             },
             {
                 ID: 3,
@@ -51,7 +51,7 @@ class EventCategories extends Component {
                 bar: 0.3,
                 from:'November 5 2019',
                 to:'december 5 2019',
-                Badge:require('https://i.ibb.co/vQDZbJ0/donation.png')
+                Badge:'https://i.ibb.co/BCHtnsn/donate1.png'
 
             },
             {
@@ -65,7 +65,7 @@ class EventCategories extends Component {
                 bar: 0.5,
                 from:'November 5 2019',
                 to:'december 5 2019',
-                Badge:require('https://i.ibb.co/vQDZbJ0/donation.png')
+                Badge:'https://i.ibb.co/9rsBMWN/donate2.png'
             },
             {
                 ID: 5,
@@ -78,7 +78,7 @@ class EventCategories extends Component {
                 bar: 0.9,
                 from:'November 5 2019',
                 to:'december 5 2019',
-                Badge:require('https://i.ibb.co/vQDZbJ0/donation.png')
+                Badge:'https://i.ibb.co/BCHtnsn/donate1.png'
             }
 
         ]

@@ -9,6 +9,34 @@ class EventScreen extends Component {
             title: navigation.getParam('itemName', 'Details Screen'),
         };
     };
+    state = {
+        sponsers: [
+            {
+                ID: 20,
+                Name: 'company',
+                slogan: 'normal',
+                sponserimg: 'https://i.ibb.co/DwvzgnG/Beats-Music-Logo.png',
+
+            },
+            {
+                ID: 21,
+                Name: 'company',
+                slogan: 'normal',
+                sponserimg: 'https://i.ibb.co/DwvzgnG/Beats-Music-Logo.png',
+
+            },
+            {
+                ID: 22,
+                Name: 'company',
+                slogan: 'normal',
+                sponserimg: 'https://i.ibb.co/DwvzgnG/Beats-Music-Logo.png',
+
+            }
+        ]
+    }
+
+  
+
     render() {
         const { navigation } = this.props;
         const item = navigation.getParam('itemdetails', 'some default value');
@@ -27,24 +55,36 @@ class EventScreen extends Component {
                         </View>
 
                     </CardSection>
-                   
-                        <Card flexdir="row" bgcolor="transparent" heit={140}>
-                            <CardSection direction="column" widthcd={'35%'} alignItem="flex-start"  align="left"  >
-                             <Text style={{fontWeight:'bold',width:'100%',textAlign:'center'}}>From</Text>
-                            <Title  wdth={'100%'} color="#737c8b" fontsizes={14} title={item.from}  align={'center'}/>
-                               
-                            </CardSection>
-                            <CardSection direction="column" widthcd={'30%'}>
-                                <CircleIcon bordercolors={item.color} url={item.Badge}/>
-                            </CardSection>
-                        
-                            <CardSection direction="column"  widthcd={'35%'}  align="left"  >
-                            <Text style={{fontWeight:'bold',width:'100%',textAlign:'center'}}>To</Text>
+
+                    <Card flexdir="row" bgcolor="transparent" heit={100}>
+                        <CardSection direction="column" widthcd={'35%'} alignItem="flex-start" align="left"  >
+                            <Text style={{ fontWeight: 'bold', width: '100%', textAlign: 'center' }}>From</Text>
+                            <Title wdth={'100%'} color="#737c8b" fontsizes={14} title={item.from} align={'center'} />
+
+                        </CardSection>
+                        <CardSection direction="column" widthcd={'30%'}>
+                            <CircleIcon bordercolors={item.color} url={item.Badge} />
+                        </CardSection>
+
+                        <CardSection direction="column" widthcd={'35%'} align="left"  >
+                            <Text style={{ fontWeight: 'bold', width: '100%', textAlign: 'center' }}>To</Text>
                             <Title wdth={'100%'} color="#737c8b" fontsizes={14} title={item.to} align={'center'} />
-                            </CardSection>
-                        </Card>
-                        <CardSection></CardSection>
-                    
+                        </CardSection>
+                     
+                    </Card>
+                    <CardSection paddingtext={20} direction="row"  heit={100} >
+                    <View style={{width:'25%'}}>
+                    <CircleIcon bordercolors={item.color} url={item.Badge} wdth={70} heit={70} wdth2={65} heit2={65} widthimg={45} heightimg={45} />
+                          </View>
+                            <View style={{width:'75%'}}>
+                                <Title color={item.color} fontsizes={18} title={item.Eventname} />
+                                <Title color="#737c8b" fontsizes={16} title="slogan one" />
+                            </View>
+                           
+                        </CardSection>
+                  
+
+
                 </Card>
 
             </View>
