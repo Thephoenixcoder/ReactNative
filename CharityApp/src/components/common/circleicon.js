@@ -4,10 +4,10 @@ import { View, Text, StyleSheet,TouchableOpacity } from 'react-native';
 import { Image } from 'react-native-elements';
 // create a component
 const CircleIcon = (props) => {
-    const {backgroundtype,title,bordercolors,paddings,url,wdth,heit,wdth2,heit2,widthimg,heightimg}=props
+    const {backgroundtype,title,bordercolors,paddings,url,wdth,heit,wdth2,heit2,widthimg,heightimg,top}=props
     return (
       
-        <View  style={[styles.container,{padding:paddings||5},{backgroundColor:backgroundtype||'#fff'},{width:wdth||100},{height:heit||100}]}>
+        <View  style={[styles.container,{padding:paddings||5},{backgroundColor:backgroundtype||'#fff'},{width:wdth||100},{height:heit||100},{top:top||'-70%'}]}>
             <View style={[{borderColor:bordercolors,borderWidth:2},styles.borderwrap,{width:wdth2||95},{height:heit2||95}]}>
             <Image
                   source={{ uri: url }}
@@ -27,7 +27,7 @@ const styles = StyleSheet.create({
         justifyContent: 'center',
         alignItems: 'center',
         position:'absolute',
-            top:'-60%',
+         
             
       
         borderRadius: 100,

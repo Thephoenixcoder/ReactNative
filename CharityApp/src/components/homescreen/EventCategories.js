@@ -24,7 +24,8 @@ class EventCategories extends Component {
                 bar: 1,
                 from:'November 5 2019',
                 to:'december 5 2019',
-                Badge:'https://i.ibb.co/BCHtnsn/donate1.png'
+                Badge:'https://i.ibb.co/BCHtnsn/donate1.png',
+                longdec:"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore"
                 
             },
             {
@@ -38,7 +39,8 @@ class EventCategories extends Component {
                 bar: 0.4,
                 from:'November 5 2019',
                 to:'december 5 2019',
-                Badge:'https://i.ibb.co/9rsBMWN/donate2.png'
+                Badge:'https://i.ibb.co/9rsBMWN/donate2.png',
+                longdec:"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore"
             },
             {
                 ID: 3,
@@ -51,7 +53,8 @@ class EventCategories extends Component {
                 bar: 0.3,
                 from:'November 5 2019',
                 to:'december 5 2019',
-                Badge:'https://i.ibb.co/BCHtnsn/donate1.png'
+                Badge:'https://i.ibb.co/BCHtnsn/donate1.png',
+                longdec:"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore"
 
             },
             {
@@ -65,7 +68,8 @@ class EventCategories extends Component {
                 bar: 0.5,
                 from:'November 5 2019',
                 to:'december 5 2019',
-                Badge:'https://i.ibb.co/9rsBMWN/donate2.png'
+                Badge:'https://i.ibb.co/9rsBMWN/donate2.png',
+                longdec:"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore"
             },
             {
                 ID: 5,
@@ -78,7 +82,8 @@ class EventCategories extends Component {
                 bar: 0.9,
                 from:'November 5 2019',
                 to:'december 5 2019',
-                Badge:'https://i.ibb.co/BCHtnsn/donate1.png'
+                Badge:'https://i.ibb.co/BCHtnsn/donate1.png',
+                longdec:"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore"
             }
 
         ]
